@@ -10,6 +10,7 @@ function App() {
   const [newDescription,setNewDescription] = useState("");
   const [completeTodos,SetCompleteTodos] = useState([]);
 
+
   const handlerAddTodo = () => {
 
     let newTodoItem = {
@@ -19,6 +20,7 @@ function App() {
 
     let updatedTodoArray = [...allTodos];
     updatedTodoArray.push(newTodoItem);
+
     setTodos(updatedTodoArray);
     localStorage.setItem('todolist',JSON.stringify(updatedTodoArray));
     setNewTitle('');
@@ -90,7 +92,9 @@ function App() {
             <input type="text" value={newDescription} onChange={(e) =>setNewDescription(e.target.value)} placeholder="Write the Description of Task" required/>
           </div>
           <div className="todo-input-items">
-            <button type="button" onClick={handlerAddTodo} className="primaryBtn">Add Todo's</button>
+            {/* <button type="button" disabled={!newTitle} onClick={handlerAddTodo} className="primaryBtn">Add Todo's</button> */}
+            
+            <button type="button" disabled={!newTitle} onClick={handlerAddTodo} className="primaryBtn">Add Todo's</button>
           </div>
         </div>
         <div className="btn-area">

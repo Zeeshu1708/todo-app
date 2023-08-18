@@ -12,7 +12,7 @@ function App() {
 
 
   const handlerAddTodo = () => {
-
+    
     let newTodoItem = {
       title: newTitle,
       description: newDescription
@@ -93,8 +93,9 @@ function App() {
           </div>
           <div className="todo-input-items">
             {/* <button type="button" disabled={!newTitle} onClick={handlerAddTodo} className="primaryBtn">Add Todo's</button> */}
+            {newTitle  !== '' && <button type="button" disabled={!newTitle} onClick={handlerAddTodo} className="primaryBtn">Add Todo's</button>}
             
-            <button type="button" disabled={!newTitle} onClick={handlerAddTodo} className="primaryBtn">Add Todo's</button>
+            
           </div>
         </div>
         <div className="btn-area">
